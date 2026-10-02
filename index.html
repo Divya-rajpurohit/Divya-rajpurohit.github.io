@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Divya C | Portfolio</title>
+<meta name="description" content="Portfolio of Divya C, a first-year BSc Computer Science and Mathematics student at Christ University.">
+<meta property="og:title" content="Divya C | Portfolio">
+<meta property="og:description" content="First-year BSc Computer Science and Mathematics student at Christ University. Full stack development project, skills and certificate.">
+<meta name="theme-color" content="#0F766E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F766E'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='700'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#F7F8FA; --surface:#FFFFFF; --ink:#101828; --muted:#5B6475; --line:#E3E6EC; --accent:#0F766E; --accent-ink:#FFFFFF; --soft:#E6F4F1; --amber:#D97706;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06); --shadow-hover:0 2px 4px rgba(16,24,40,.08),0 18px 40px rgba(16,24,40,.13);
+  --serif:"Newsreader",Georgia,"Times New Roman",serif; }
+[data-theme="dark"] { --bg:#0B1220; --surface:#121B2E; --ink:#EEF2F8; --muted:#9AA6BD; --line:#233049; --accent:#2DD4BF; --accent-ink:#06201C; --soft:rgba(45,212,191,.12); --amber:#FBBF24;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3); --shadow-hover:0 2px 4px rgba(0,0,0,.5),0 18px 40px rgba(0,0,0,.45); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 Figtree,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; transition:background .3s,color .3s; }
+h1,h2,h3,h4 { font-family:var(--serif); font-weight:600; line-height:1.15; margin:0; letter-spacing:-.01em; }
+a { color:var(--accent); }
+a:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+header.top { position:sticky; top:0; z-index:20; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+header.top .wrap { display:flex; align-items:center; gap:6px 24px; flex-wrap:wrap; padding-top:12px; padding-bottom:12px; }
+.logo { font:600 22px var(--serif); color:var(--ink); text-decoration:none; margin-right:auto; }
+.logo::after { content:""; display:inline-block; width:8px; height:8px; margin-left:4px; border-radius:50%; background:var(--accent); }
+header.top nav { display:flex; gap:4px; }
+header.top nav a { color:var(--muted); text-decoration:none; font-weight:500; font-size:15px; padding:6px 12px; border-radius:8px; transition:color .2s,background .2s; }
+header.top nav a:hover { color:var(--ink); background:var(--soft); }
+header.top nav a.active { color:var(--accent); background:var(--soft); }
+.theme { background:var(--surface); border:1px solid var(--line); color:var(--ink); border-radius:8px; padding:6px 14px; font:500 14px Figtree,sans-serif; cursor:pointer; transition:border-color .2s; }
+.theme:hover { border-color:var(--accent); }
+
+.btn { display:inline-block; padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:600 15px Figtree,sans-serif; text-decoration:none; cursor:pointer; transition:transform .2s,box-shadow .2s,border-color .2s; }
+.btn:hover { transform:translateY(-2px); box-shadow:var(--shadow-hover); border-color:var(--accent); }
+.btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+.btns { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+
+.hero { position:relative; overflow:hidden; padding:84px 0 96px; }
+.hero::before { content:""; position:absolute; inset:0; background:radial-gradient(520px circle at var(--x,70%) var(--y,30%),var(--soft),transparent 70%); pointer-events:none; }
+.hero .wrap { position:relative; display:grid; grid-template-columns:1.2fr .8fr; gap:56px; align-items:center; }
+.pill { display:inline-flex; align-items:center; gap:10px; padding:6px 16px; border:1px solid var(--line); border-radius:999px; background:var(--surface); font-weight:500; font-size:14px; }
+.pill i { width:9px; height:9px; border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow:0 0 0 0 var(--accent); } 70% { box-shadow:0 0 0 9px transparent; } 100% { box-shadow:0 0 0 0 transparent; } }
+.hero h1 { font-size:clamp(46px,8.5vw,88px); margin:22px 0 10px; letter-spacing:-.03em; }
+.typed { font:500 clamp(20px,3vw,28px) var(--serif); color:var(--accent); min-height:2.5em; margin:0 0 6px; }
+.caret { display:inline-block; width:2px; height:1em; background:var(--accent); margin-left:3px; vertical-align:-.12em; animation:blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity:0; } }
+.hero p.sub { color:var(--muted); max-width:46ch; font-size:19px; margin:0 0 28px; }
+.glance { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px 28px; box-shadow:var(--shadow-hover); transition:transform .15s ease-out; will-change:transform; }
+.glance h3 { font-size:20px; margin-bottom:6px; }
+.glance dl { margin:0; }
+.glance div { padding:12px 0; border-bottom:1px solid var(--line); }
+.glance div:last-child { border-bottom:0; padding-bottom:0; }
+.glance dt { font-size:13px; color:var(--muted); font-weight:500; }
+.glance dd { margin:0; font-weight:600; }
+
+section { padding:88px 0 8px; scroll-margin-top:56px; }
+section h2 { font-size:clamp(32px,5vw,46px); margin-bottom:10px; }
+.lead { color:var(--muted); max-width:58ch; margin:0 0 32px; }
+
+.card { background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); transition:transform .25s,box-shadow .25s,border-color .25s; }
+.card:hover { transform:translateY(-5px); box-shadow:var(--shadow-hover); border-color:var(--accent); }
+
+.about { display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; }
+.about p { margin:0 0 16px; max-width:58ch; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.stat { padding:20px 14px; text-align:center; }
+.stat b { display:block; font:600 42px var(--serif); color:var(--accent); line-height:1.1; }
+.stat span { font-size:14px; color:var(--muted); line-height:1.3; display:block; margin-top:4px; }
+
+.filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.filter { border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:7px 18px; font:500 15px Figtree,sans-serif; cursor:pointer; transition:all .2s; }
+.filter:hover { border-color:var(--accent); }
+.filter[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+.skills { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px; }
+.sk { padding:22px; animation:rise .4s both; }
+@keyframes rise { from { opacity:0; transform:translateY(12px); } }
+.sk h3 { font-size:22px; margin-bottom:4px; }
+.sk .tag { display:inline-block; font-size:12px; font-weight:600; padding:2px 10px; border-radius:999px; background:var(--soft); color:var(--accent); margin-bottom:10px; }
+.sk p { margin:0; color:var(--muted); font-size:15px; line-height:1.55; }
+
+.proj { padding:34px; }
+.proj:hover { transform:none; }
+.proj h3 { font-size:clamp(28px,4vw,38px); margin-bottom:10px; }
+.proj > p { color:var(--muted); max-width:64ch; margin:0 0 16px; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+.tags span { font-size:13px; font-weight:600; padding:3px 12px; border-radius:999px; border:1px solid var(--line); background:var(--bg); }
+.tri { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:34px; }
+.tri .card { padding:20px; box-shadow:none; background:var(--bg); }
+.tri h4 { font-size:19px; margin-bottom:6px; color:var(--accent); }
+.tri p { margin:0; font-size:15px; color:var(--muted); line-height:1.55; }
+.proj h4.sub { font-size:22px; margin-bottom:4px; }
+.steps { list-style:none; display:flex; margin:22px 0 10px; padding:0; }
+.steps li { flex:1; text-align:center; position:relative; }
+.steps li + li::before { content:""; position:absolute; top:19px; right:50%; width:100%; height:2px; background:var(--line); transition:background .3s; }
+.steps li.reached::before { background:var(--accent); }
+.node { position:relative; z-index:1; width:40px; height:40px; border-radius:50%; border:2px solid var(--line); background:var(--surface); color:var(--muted); font:600 15px Figtree,sans-serif; cursor:pointer; transition:all .25s; }
+.node:hover { border-color:var(--accent); transform:scale(1.1); }
+.reached .node { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+.on .node { box-shadow:0 0 0 5px var(--soft); }
+.steps span { display:block; margin-top:8px; font-size:13px; font-weight:500; color:var(--muted); }
+.on span { color:var(--ink); font-weight:600; }
+.stepinfo { background:var(--bg); border-radius:12px; padding:16px 20px; min-height:92px; }
+.stepinfo h5 { font:600 18px var(--serif); margin:0 0 4px; }
+.stepinfo p { margin:0; color:var(--muted); }
+.proj .note { color:var(--muted); font-size:15px; margin:26px 0 16px; max-width:64ch; }
+
+.edu { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.edu .card { padding:26px; }
+.edu small { color:var(--muted); font-weight:500; }
+.edu .big { font:600 clamp(36px,5vw,48px) var(--serif); color:var(--accent); margin:6px 0 4px; line-height:1.1; }
+.edu p { margin:0; font-size:15px; color:var(--muted); }
+
+.cert { display:flex; align-items:center; gap:22px; padding:26px 30px; position:relative; overflow:hidden; }
+.cert .badge { flex:none; width:72px; height:72px; display:grid; place-items:center; border-radius:16px; background:var(--soft); color:var(--accent); font:600 40px var(--serif); transition:transform .4s; }
+.cert:hover .badge { transform:rotate(-8deg) scale(1.08); }
+.cert h3 { font-size:24px; }
+.cert p { margin:2px 0 0; color:var(--muted); }
+
+.contact { padding:44px 40px; }
+.contact:hover { transform:none; }
+.contact h2 { font-size:clamp(30px,4.5vw,42px); margin-bottom:18px; }
+.mail { font:600 clamp(19px,3.2vw,26px) var(--serif); word-break:break-all; }
+.contact .btns { margin-top:20px; }
+#toast { color:var(--accent); font-weight:600; font-size:15px; }
+footer { padding:56px 0 48px; font-size:15px; color:var(--muted); }
+
+@media (max-width:860px) {
+  .hero .wrap, .about { grid-template-columns:1fr; }
+  .hero { padding:56px 0 64px; }
+  header.top nav { order:3; width:100%; overflow-x:auto; }
+  .tri { grid-template-columns:1fr; }
+  .proj, .contact { padding:24px 20px; }
+  .steps span { font-size:11px; }
+  .cert { flex-direction:column; align-items:flex-start; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home">Divya C</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Project</a>
+      <a href="#education">Education</a>
+      <a href="#certificate">Certificate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">Dark mode</button>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <span class="pill"><i></i>Looking for an internship</span>
+        <h1>Hi, I'm Divya.</h1>
+        <p class="typed">I'm <span id="type"></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="sub">A first-year BSc student at Christ University who likes solving problems step by step, and is building her skills in full stack development.</p>
+        <div class="btns">
+          <a class="btn primary" href="#project">View my project</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="glance" id="glance" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>University</dt><dd>Christ University</dd></div>
+          <div><dt>Programme</dt><dd>BSc Computer Science and Mathematics, first year</dd></div>
+          <div><dt>Focus</dt><dd>Full stack development</dd></div>
+          <div><dt>Interest</dt><dd>Using AI to learn and work better</dd></div>
+          <div><dt>Certificate</dt><dd>Infosys Springboard, C programming</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <div class="about">
+        <div>
+          <p>I'm a first-year BSc student in Computer Science and Mathematics at Christ University. Maths taught me to work a problem out one step at a time, and I play sudoku for the same reason.</p>
+          <p>AI interests me because it is so useful in everyday life. We can use it to build our skills, do better work and save time. It will keep evolving, and opposing it won't stop that, so I think the better choice is to learn how to use it well and grow with it.</p>
+          <p>In my first semester I learned web development and built a website with a database behind it. I'm looking for an internship where I can work on a real project, learn from a team, and keep building.</p>
+        </div>
+        <div class="stats">
+          <div class="card stat"><b data-to="7">0</b><span>pages built</span></div>
+          <div class="card stat"><b data-to="5">0</b><span>technologies used</span></div>
+          <div class="card stat"><b data-to="1">0</b><span>full stack project</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lead">What I've used, and where. Filter by area.</p>
+      <div class="filters" id="filters"></div>
+      <div class="skills" id="skillgrid"></div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="wrap">
+      <h2>Project</h2>
+      <div class="card proj">
+        <h3>Break the Bias</h3>
+        <p>A multi-page website about gender bias and how it affects women, men and the LGBTQ+ community, built for my first-semester Web Application Development course.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>XAMPP</span></div>
+
+        <div class="tri">
+          <div class="card"><h4>Frontend</h4><p>Seven linked pages with a layout that adjusts to phones and desktops, and JavaScript for the metrics buttons and the goals section.</p></div>
+          <div class="card"><h4>Backend</h4><p>PHP connects the sign-up form to the database and saves each entry with prepared statements and hashed passwords.</p></div>
+          <div class="card"><h4>Database</h4><p>MySQL stores every sign-up in a User_info table.</p></div>
+        </div>
+
+        <h4 class="sub">Follow a sign-up</h4>
+        <p style="margin:0;color:var(--muted)">Click through the steps to see what happens when someone submits the form.</p>
+        <ol class="steps" id="steps"></ol>
+        <div class="stepinfo" id="stepinfo" aria-live="polite"></div>
+        <div class="btns" style="margin-top:14px">
+          <button class="btn" id="back" type="button">Back</button>
+          <button class="btn primary" id="next" type="button">Next</button>
+        </div>
+
+        <p class="note">The sign-up form needs PHP and MySQL, so saving entries works locally on XAMPP. The README in the repository explains how to run it.</p>
+        <a class="btn primary" href="https://github.com/Divya-rajpurohit/breakthebias">View the code on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="card"><small>Current</small><div class="big">Year 1</div><p>BSc, Computer Science and Mathematics, Christ University</p></div>
+        <div class="card"><small>2nd PUC</small><div class="big"><span data-to="93.83" data-dec="2">0</span>%</div><p>Pre-university course</p></div>
+        <div class="card"><small>10th, State Board</small><div class="big"><span data-to="92.48" data-dec="2">0</span>%</div><p>State board examination</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificate">
+    <div class="wrap">
+      <h2>Certificate</h2>
+      <div class="card cert">
+        <div class="badge" aria-hidden="true">C</div>
+        <div>
+          <h3>C Programming Course</h3>
+          <p>Infosys Springboard. Course completion certificate, completed on July 31, 2026.</p>
+          <div class="btns" style="margin-top:16px">
+            <a class="btn primary" href="Infosys_certificate.pdf" target="_blank" rel="noopener">View certificate</a>
+            <a class="btn" href="https://verify.onwingspan.com" target="_blank" rel="noopener">Verify online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="card contact">
+        <h2>Let's connect</h2>
+        <a class="mail" href="mailto:divrp458@gmail.com">divrp458@gmail.com</a>
+        <div class="btns">
+          <button class="btn" id="copy" type="button">Copy email</button>
+          <a class="btn" href="https://github.com/Divya-rajpurohit">GitHub</a>
+          <span id="toast" role="status"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Divya C, BSc Computer Science and Mathematics, Christ University</div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var canHover = window.matchMedia("(hover: hover)").matches;
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  /* Theme: follows the device setting and remembers the choice */
+  var root = document.documentElement, themeBtn = $("theme"), saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  function setTheme(t) {
+    root.setAttribute("data-theme", t);
+    themeBtn.textContent = t === "dark" ? "Light mode" : "Dark mode";
+    try { localStorage.setItem("theme", t); } catch (e) {}
+  }
+  setTheme(saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  themeBtn.onclick = function () { setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark"); };
+
+  /* Typing line */
+  var phrases = ["a Computer Science and Mathematics student.", "learning full stack development.", "a problem solver.", "curious about using AI well."];
+  var typeEl = $("type"), pi = 0, ci = 0, del = false;
+  function tick() {
+    var p = phrases[pi]; ci += del ? -1 : 1; typeEl.textContent = p.slice(0, ci);
+    var wait = del ? 28 : 60;
+    if (!del && ci === p.length) { wait = 1600; del = true; }
+    else if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; wait = 350; }
+    setTimeout(tick, wait);
+  }
+  if (reduce) { typeEl.textContent = phrases[0]; } else { tick(); }
+
+  /* Hero spotlight and card tilt */
+  if (canHover && !reduce) {
+    var hero = $("home"), glance = $("glance");
+    hero.addEventListener("mousemove", function (e) {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty("--x", (e.clientX - r.left) + "px");
+      hero.style.setProperty("--y", (e.clientY - r.top) + "px");
+    });
+    glance.addEventListener("mousemove", function (e) {
+      var r = glance.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      glance.style.transform = "perspective(800px) rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 8) + "deg)";
+    });
+    glance.addEventListener("mouseleave", function () { glance.style.transform = ""; });
+  }
+
+  /* Skills with filters: name, area, level, where I used it */
+  var SK = [
+    ["HTML", "Frontend", "Used in project", "Structure of all seven pages of Break the Bias."],
+    ["CSS", "Frontend", "Used in project", "A shared stylesheet, and a layout that works on phones as well as desktops."],
+    ["JavaScript", "Frontend", "Used in project", "The metrics buttons on the group pages and the goals section on the About page."],
+    ["PHP", "Backend", "Basic level", "Used in my project to connect the sign-up form to the MySQL database. I know the parts the project needed."],
+    ["MySQL", "Backend", "Used in project", "Stores sign-ups in a User_info table. I first learned the basics in PUC."],
+    ["Python", "Programming", "Basic level", "Learned in PUC."],
+    ["C", "Programming", "Basic level", "Learned in my first semester, with an Infosys Springboard certificate in C programming."],
+    ["XAMPP", "Tools", "Basic level", "Runs my project on my own computer with a local web server and MySQL."],
+    ["GitHub", "Tools", "Getting started", "Hosts the code for my project."]
+  ];
+  var areas = ["All", "Frontend", "Backend", "Programming", "Tools"], fbox = $("filters"), grid = $("skillgrid");
+  function showSkills(area) {
+    [].forEach.call(fbox.children, function (b) { b.setAttribute("aria-pressed", b.textContent === area ? "true" : "false"); });
+    grid.innerHTML = "";
+    SK.filter(function (s) { return area === "All" || s[1] === area; }).forEach(function (s, i) {
+      var c = el("div", "card sk"); c.style.animationDelay = (i * 50) + "ms";
+      c.appendChild(el("span", "tag", s[2])); c.appendChild(el("h3", null, s[0])); c.appendChild(el("p", null, s[3]));
+      grid.appendChild(c);
+    });
+  }
+  areas.forEach(function (a) { var b = el("button", "filter", a); b.type = "button"; b.onclick = function () { showSkills(a); }; fbox.appendChild(b); });
+  showSkills("All");
+
+  /* Follow a sign-up */
+  var ST = [
+    ["Form", "Someone fills in the form on contact.html and clicks Join the movement."],
+    ["Request", "The browser sends the form data to process.php using a POST request."],
+    ["PHP", "process.php reads the values, hashes the password, and prepares the SQL statement so user input cannot change the query."],
+    ["Database", "The row is saved in the User_info table of the breakthebias database in MySQL."],
+    ["Reply", "PHP sends back a success message and a link to the home page."]
+  ];
+  var cur = 0, list = $("steps"), box = $("stepinfo"), nextBtn = $("next");
+  ST.forEach(function (s, i) {
+    var li = el("li"), n = el("button", "node", String(i + 1));
+    n.type = "button"; n.setAttribute("aria-label", "Step " + (i + 1) + ": " + s[0]); n.onclick = function () { show(i); };
+    li.appendChild(n); li.appendChild(el("span", null, s[0])); list.appendChild(li);
+  });
+  function show(n) {
+    cur = n;
+    [].forEach.call(list.children, function (li, i) { li.className = (i <= cur ? "reached" : "") + (i === cur ? " on" : ""); });
+    box.innerHTML = ""; box.appendChild(el("h5", null, "Step " + (cur + 1) + ": " + ST[cur][0])); box.appendChild(el("p", null, ST[cur][1]));
+    nextBtn.textContent = cur === ST.length - 1 ? "Start over" : "Next";
+  }
+  nextBtn.onclick = function () { show(cur === ST.length - 1 ? 0 : cur + 1); };
+  $("back").onclick = function () { show(Math.max(0, cur - 1)); };
+  show(0);
+
+  /* Numbers count up when they scroll into view */
+  function count(e) {
+    var to = parseFloat(e.getAttribute("data-to")), dec = parseInt(e.getAttribute("data-dec") || "0", 10), start = null;
+    if (reduce) { e.textContent = to.toFixed(dec); return; }
+    function step(t) {
+      if (start === null) start = t;
+      var p = Math.min((t - start) / 1200, 1);
+      e.textContent = (to * (1 - Math.pow(1 - p, 3))).toFixed(dec);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var nums = document.querySelectorAll("[data-to]");
+  if ("IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { count(en.target); cio.unobserve(en.target); } });
+    }, { threshold: 0.6 });
+    [].forEach.call(nums, function (n) { cio.observe(n); });
+  } else { [].forEach.call(nums, count); }
+
+  /* Contact */
+  var toast = $("toast");
+  $("copy").onclick = function () {
+    var done = function (m) { toast.textContent = m; setTimeout(function () { toast.textContent = ""; }, 2000); };
+    if (navigator.clipboard) { navigator.clipboard.writeText("divrp458@gmail.com").then(function () { done("Copied!"); }, function () { done("Select the email to copy it."); }); }
+    else { done("Select the email to copy it."); }
+  };
+
+  /* Highlight the current section in the menu */
+  var links = document.querySelectorAll("header.top nav a");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id); }); }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("section").forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
